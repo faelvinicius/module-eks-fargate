@@ -8,7 +8,7 @@ locals {
   region          = var.region
 
   tags = {
-    Example       = local.name
+    Name          = local.name
     Environment   = var.environment
     ProvisionedBy = var.provisioner   
   }
@@ -54,12 +54,9 @@ module "eks" {
 
       instance_types = var.instance_types
       labels = {
-        Example    = "managed_node_groups"
+        Name          = join("-", ["ng", local.name])
         Environment   = var.environment
         ProvisionedBy = var.provisioner 
-      }
-      tags = {
-        ExtraTag = "example"
       }
     }
   }
