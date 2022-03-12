@@ -14,7 +14,7 @@ variable "cluster_version" {
     default = "1.21"
 }
 
-variable "instances_types" {
+variable "instance_types" {
     default = [ "t3.small" ]
 }
 
